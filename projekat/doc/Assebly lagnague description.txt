@@ -1,0 +1,13 @@
+﻿- Labele , instrukcije i direktive se pisu u zasebnim linijama
+- Jedino za neposredne apsolutne vrednosti je dozvoljeno 0x tj. pissanje brojeva u hexa obliku
+- Kod instrukcija ne postoji mogucnost unosenja operanada u obliku izraza
+- Memorijsko direktno adresiranje ne moze da pocne sa "r"
+- Kada se koristi registarsko direktno adresiranje za neki operand, onda se npr. r2l i r2 isto kodiraju zbog poslednjeg L/H bita u kodiranju nacina adresiranja datog operanda
+- Za regindpom si omogucio samo da stoji w dodatak operaciji instrukcije kada se koristi pomeraj simbola, npr: addw r2,r3[simb] sto znaci da si podrazumevao da offset od simbola simb mora da se koduje na 2B
+- Za immed si za adresiranje simbola omogucio da se offset simbola kodira i na 2B i na 1B tj, omogucio si i addw r2,simb i addb r2l,simb
+- Za regindpom nisi omogucio koriscenje r7 jer je to pc
+- Nije moguce da oba navedena simbola u izrazu kod direktive .word jos nisu definisana jer onad nije moguce ostaviti dobru relokaciju za linker
+- Za .word nisi uzeo da ima razmak posle zareza i nisi proveravao greske tipa 2-simb
+- Za izracunavanje izraza smeju se koristiti samo jednocifreni brojevi
+- Nisi uzeo u obzir da se u instrukciji moze referenisati simbol iz druge sekcije pa onda da na mestu instrukcije ugradis offset tog simbola a u relokacionu tabelu dodas relokaciju te sekcije 
+.word u naopakom redosledu upisuje sadrzaj u memoriju

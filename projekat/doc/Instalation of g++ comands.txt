@@ -1,0 +1,7 @@
+Podesavanje za update g+-+- i gcc kompajlera na verzije 6 u Ubuntu 12 VM
+sudo apt-get install g
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-6 g6
+sudo update-alternatives --install /user/bin/gcc gcc /usr/bin/gcc gcc /usr/bin/gcc-6 20 -slave /usr/bin/g g /usr/bin/g6
+g --version
